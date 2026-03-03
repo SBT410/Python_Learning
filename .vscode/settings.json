@@ -1,0 +1,11 @@
+{
+    "cSpell.words": [
+        "Shashi"
+    ],
+    "launch": {
+
+    "editor.autoClosingBrackets": false,
+    "editor.suggestOnTriggerCharacters": false,
+    },
+    "chat.disableAIFeatures": false
+}
