@@ -146,3 +146,29 @@ def count_unique_rows(matrix):
     return len(unique_rows)
 
 print(count_unique_rows(matrix))
+
+
+# Find the most 2nd occurrence from the list
+
+lists = [1,2,3,3,2,4,5,6,7,7,7,3,3,3,7]
+
+count = {}
+for list in lists:
+    count[list] = lists.count(list)
+
+sorted_num = sorted(count, key=count.get, reverse = True)
+print(sorted_num[0])
+
+
+# Find the most any no of occurrence from the list
+
+lists = [1,2,3,3,2,4,5,6,7,7,7,3,3,3,7]
+
+n = 4  
+count = {}
+for list in lists:
+    count[list] = lists.count(list)
+sorted_num = sorted(count, key=count.get, reverse = True)
+print(f"{n} most occurring number is:", sorted_num[n-1])
+
+
