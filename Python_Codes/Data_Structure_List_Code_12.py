@@ -198,3 +198,7 @@ matrix = [
 matrix[-1].pop(0)
 matrix[0].pop() #for last value index is not required pop() will take auto
 print(matrix)
+
+# Change List - Update items:
+
+letters = ['a','b','c','b']
