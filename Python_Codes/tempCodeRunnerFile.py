@@ -1,8 +1,12 @@
-lists = [1,2,3,3,2,4,5,6,7,7,7,3,3,3,7]
+matrix = [
+          ['a','b','c'],  # Row 0
+          ['d','e','f'],  # Row 1
+          ['g','h','i']   # Row 2
+         ] 
 
-n = 4  
-count = {}
-for list in lists:
-    count[list] = lists.count(list)
-sorted_num = sorted(count, key=count.get, reverse = True)
-print(f"{n} most occurring number is:", sorted_num[n-1])
+#matrix.remove(['a','b','c'])
+#matrix.pop()
+#matrix[1].remove('e')
+matrix[-1].pop(0)
+matrix[0].pop()
+print(matrix)
