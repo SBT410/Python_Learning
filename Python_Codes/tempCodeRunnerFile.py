@@ -1,9 +1,10 @@
-matrix = [
-          ['a','b','c'],  # Row 0
-          ['d','e','f'],  # Row 1
-          ['g','h','i']   # Row 2
-         ] 
-
-matrix[1] = ['x', 'y','z']
-matrix[0][1] = 's'
-print(matrix)
+set1 = {10, 20, 30, 40}
+set2 = {30, 40, 50, 60}
+set3 = {30, 40, 50, 60}
+set4 = {5, 6}
+print(set1.issubset(set2))
+print(set2.issubset(set3))
+print(set1.issuperset(set2))
+print(set2.issuperset(set3))
+print(set1.isdisjoint(set2))
+print(set3.isdisjoint(set4))

@@ -215,3 +215,278 @@ matrix = [
 matrix[1] = ['x', 'y','z']
 matrix[0][1] = 's'
 print(matrix)
+
+# Sorting List
+
+#letters = ['c','a','d','b']
+numbers = [7,2,5,3,1,9]
+#letters.sort()
+#letters.sort(reverse=True)
+#print(letters)
+numbers.sort()
+numbers.sort(reverse=True)
+print(numbers)
+
+matrix = [
+          ['d','e','f'],  # Row 0
+          ['g','h','i'],  # Row 1
+          ['a','b','c']   # Row 2
+         ] 
+
+matrix = [
+          ['d','e','f'],  # Row 0
+          ['a','z','i'],  # Row 1
+          ['a','a','c']   # Row 2
+         ] 
+
+#matrix.sort()
+#matrix.sort(reverse=True)
+matrix[1].sort()
+print(matrix)
+
+# If we dont want to change the original list we can create new list using sorted() 
+
+letters = ['c','a','d','b']
+#new_list = sorted(letters)
+new_list = sorted(letters, reverse=True)
+print('Original List:', letters)
+print('Sorted List:', new_list)
+
+# Reverse the data
+
+numbers = [7,2,5,3,1,9]
+#numbers.reverse()
+#new_num = reversed(numbers)
+new_num = list(reversed(numbers))
+print('Original List:', numbers)
+print('Reverse List:', new_num)
+
+# Copying List - Assignment
+
+letters = ['a','b','c']
+letters_copy = letters
+#letters.pop()
+#letters_copy.append('z')
+print('Original:', letters)
+print('Copy:', letters_copy)
+
+# Copying List - Shallow Copy
+
+letters = ['a','b','c']
+letters_copy = letters.copy()
+letters.pop()
+#letters_copy.append('z')
+print('Original:', letters)
+print('Copy:', letters_copy)
+
+
+matrix = [
+          ['a','b',],  # Row 0
+          ['c','d',]   # Row 1
+         ] 
+
+matrix_copy = matrix.copy()
+matrix.pop()
+matrix_copy[0].append('z')
+print('Original:', matrix)
+print('Copy:', matrix_copy)
+
+# Copying List - Deep Copy
+
+import copy
+matrix = [
+          ['a','b',],  # Row 0
+          ['c','d',]   # Row 1
+         ] 
+
+matrix_copy = copy.deepcopy(matrix) # it will create true, independent copy of all levels no matter how nested is our list
+matrix.pop()
+matrix_copy[0].append('z')
+print('Original:', matrix)
+print('Copy:', matrix_copy)
+
+# Testing - IS operator 
+
+import copy
+original = [
+          ['a','b',],  # Row 0
+          ['c','d',]   # Row 1
+         ] 
+
+# Assignment
+
+copy1 = original
+print('Same Object?' , original is copy1,'\n')
+
+# Shallow Copy
+
+copy2 = original.copy()
+print('Same Object?' , original is copy2)
+print('Shared List?',original[0] is copy2[0], '\n')
+
+# Deep Copy
+
+copy3 = copy.deepcopy(original)
+print('Same Object?' , original is copy3)
+print('Shared List?',original[0] is copy3[0], '\n')
+
+# Combining List
+
+# Using Operators
+
+letters = ['a','b','c']
+numbers = [1, 2, 3]
+#comb = letters + numbers
+comb = [letters , numbers]
+print(comb)
+#print(letters * 2)
+
+# Using extend()
+
+letters = ['a','b','c']
+numbers = [1, 2, 3]
+letters.extend(numbers)
+print(numbers)
+print(letters)
+
+# Using zip()
+
+letters = ['a','b','c']
+#numbers = [1, 2, 3]
+numbers = [1, 2, 3, 4] # Python stops at the shortest list so 4 will not be included in output list
+#comb = list(zip(letters , numbers))
+comb = list(zip(letters , numbers, 'hi')) # we can pair the list with string value
+print(comb)
+
+# Example of zip()
+
+ids = [101, 102, 103]
+names = ['jai','shri','ram']
+print(list(zip(ids, names)))
+
+
+# List Iterator
+# Iterators and Iterable
+
+letters = ['a','b','c']
+#nums = 12345
+for l in letters:
+#for n in nums:
+    print(l.upper())
+
+# to store new result in a list
+
+letters = ['a','b','c']
+new_list = []
+for l in letters:
+    new_list.append(l.upper())
+    print(new_list)
+
+# Iterators - enumerate, reversed, zip
+letters = ['a','b','c']
+#print(list(enumerate(letters,start)))
+#print(list(enumerate(letters,start=1)))
+for index, value in enumerate(letters):
+    print(index, value)
+
+# TO use analyse the data if it bad
+letters = ['a','','c']
+for index, value in enumerate(letters):
+    print(index, value)
+
+letters = ['a','b','c']
+#print(list(reversed(letters)))
+for l in reversed(letters):
+    print(l)
+
+letters = ['a','b','c']
+num = [1, 2, 3]
+#print(list(zip(letters,num)))
+for l,n in zip(letters,num):
+    print(l,n)
+
+letters = ['a','b','c']
+print(list(map(str.upper, letters)))
+
+num = ['1', '2', '3']
+print(list(map(int, num)))
+
+names = [' Jai ','Shri ',' Ram']
+#print(list(map(str.strip,names)))
+for n in map(str.strip,names):
+    print(n)
+
+
+letters = ['a','b','', None,'c', False]
+print(list(filter(None, letters)))
+print(list(filter(bool, letters)))
+
+items = ['sql','543','python', '55']
+#print(list(filter(str.isalpha, items)))
+for i in (filter(str.isalpha, items)):
+    print(i)
+
+
+multiple =lambda x: x*2
+print (multiple(2))
+
+
+addition = lambda x,y: x + y
+print(addition(3,5))
+
+
+check = lambda i : i in 'python'
+print(check('x'))
+
+
+prices = ['$55.56','$9.5','$100.00']
+print(list(map(lambda p : float(p.replace('$','')),prices)))
+
+p = '$55.56'
+print (float(p.replace('$','')))
+
+
+prices = [120,555,300,55,99]
+print(list(filter(lambda p : p >= 100,prices)))
+
+# To filter students who got marks more than 70
+students = [['Jai', 60],
+            ['Shri', 95],
+            ['Ram', 100]
+           ]
+print(list(filter(lambda row: row[1] > 70,students)))
+# Logic - print(students[2][1] > 70)
+
+
+students = [['Jai', 60],
+            ['Shri', 95],
+            ['Ram', 100]
+           ]
+#Logic - print(students[2][0].startswith('R'))
+
+print(list(filter(lambda row: row[0].startswith('R') ,students)))
+
+
+#******* MOST IMP *********
+# List Comprehension
+
+domains = ['www.google.com',
+           'openai.com',
+           'localhost',
+           'WWW.SBT.COM']
+
+'''cleaned = [
+            d.lower().replace('www.','') # Data Transformation
+            for d in domains             # For Loop
+            if '.' in d                  # Data Filtering
+]'''
+# we can do it in one line 
+cleaned = [ d.lower().replace('www.','') for d in domains if '.' in d ]
+print(cleaned)
+
+
+my_list = [10, 20, 30 , 10]
+print(my_list) # Ordered # Allow Duplicates
+print(my_list[1]) # Indexed
+my_list[3] = 55
+print(my_list) # Mutable

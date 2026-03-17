@@ -172,3 +172,107 @@ sorted_num = sorted(count, key=count.get, reverse = True)
 print(f"{n} most occurring number is:", sorted_num[n-1])
 
 
+
+lists = [1,2,3,3,2,4,5,6,7,7,3,3,3,7]
+
+second = sorted(set(list), key=list.count,reverse=True)[1]
+print("Second most occurring number:", second)
+
+
+
+#For Vowels 
+
+word = 'programming'
+vowels = 'aeiou'
+count = 0
+
+for char in word:
+    if char in vowels:
+        count += 1
+print('No of vowels: ',count)   
+
+
+#For consonants
+word = 'programming'
+vowels = 'aeiou'
+count = 0
+
+for char in word:
+    if char not in vowels:
+        count += 1
+print('No of Consonants: ',count)   
+
+# No of occurrences in a string
+
+text = 'programming'
+char = 'm'
+
+count = text.count(char)
+print('Occurrences:', count)
+
+
+# fibonacci series
+
+# exp - ans - 0 1 1 2 3 5 8 13
+
+n = 8
+a,b = 0, 1
+
+for i in range(n):
+    print(a, end=' ')
+    a, b = b, a + b
+
+# find max , min, and mid from a list
+
+numbers = [5,55,25,35,95,85]
+
+print('Maximum No is ', max(numbers))
+print('Minimum No is ', min(numbers))
+print('Middle No is ', numbers[len(numbers)//2])
+
+# convert list into string 
+
+letters = ['S','H','A','S','H','I']
+result = "".join(letters)
+print(result)
+print(type(result))
+
+# compare 2 string for anagram
+
+str1 = 'listen'
+str2 = 'silent'
+
+if sorted(str1) == sorted(str2):
+    print('Anagram')
+else:
+    print('Not Anagram')
+
+
+# Checking Palindrome using Extended Slicing
+
+word = "madam"
+
+if word == word[::-1]:
+    print('Palindrome')
+else:
+    print('Not Palindrome')
+
+
+
+text = 'sha shi bhu shan'
+s
+
+space_count = text.count(" ")
+
+print("Spaces:", space_count)
+
+no_space = text.replace(" ", "")
+
+print("Without spaces:", no_space)
+
+
+
+
+
+
+
